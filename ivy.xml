@@ -1,0 +1,17 @@
+<ivy-module version="2.0">
+    <info organisation="org.demo" module="demo"/>
+    <configurations>
+        <conf name="compile"/>
+        <conf name="runtime" extends="compile"/>
+        <conf name="test"    extends="runtime"/>
+    </configurations>
+    <!--
+    Dependencies can be found using Maven Central's search site:
+
+        http://search.maven.org/
+    -->
+    <dependencies>
+        <!-- Test dependencies -->
+        <dependency org="junit" name="junit" rev="4.10" conf="*->*"/>
+    </dependencies>
+</ivy-module>
