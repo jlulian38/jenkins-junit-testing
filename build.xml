@@ -99,8 +99,8 @@
 	      <formatter type="xml"/>
 
 	      <batchtest fork="yes" todir="${report.dir}">
-	        <fileset dir="${src.test}">
-	          <include name="**/*Test*.java"/>
+	        <fileset dir="${class.dir}">
+	          <include name="**/*Test*.class"/>
 	        </fileset>
 	      </batchtest>
 
