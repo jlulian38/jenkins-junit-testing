@@ -1,4 +1,4 @@
-<project name="EBCExitement" default="test" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+<project name="EBCExitement" default="all" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
 	<!-- Adapted from: http://stackoverflow.com/questions/9330805/does-the-junit-jar-has-to-be-in-the-ant-lib-directory-to-run-junit-task -->
 	
     <!--
@@ -26,7 +26,6 @@
     <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" />
 
     <target name="download-ivy" unless="offline">
-
         <mkdir dir="${ivy.jar.dir}"/>
         <!-- download Ivy from web site so that it can be used even without any special installation -->
         <get src="http://repo2.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" 
@@ -63,7 +62,7 @@
 
         <mkdir dir="${class.dir}"/>
     	
-        <copy includeemptydirs="false" todir="${class.dir}">
+        <!-- <copy includeemptydirs="false" todir="${class.dir}">
             <fileset dir="src">
                 <exclude name="**/*.g"/>
                 <exclude name="**/*.java"/>
@@ -74,7 +73,7 @@
                 <exclude name="**/*.g"/>
                 <exclude name="**/*.java"/>
             </fileset>
-        </copy>
+        </copy> -->
     </target>
 
     <target name="build" depends="init" description="Build the project">
@@ -107,6 +106,8 @@
 
 	    </junit>
 	</target>
+	
+	<target name="all" depends="build,test"/>
 
     <target name="clean" description="Remove build directories">
         <delete dir="${build.dir}"/>
