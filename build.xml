@@ -79,7 +79,7 @@
 
     <target name="build" depends="init" description="Build the project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="${class.dir}" includeantruntime="false" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${class.dir}" includeantruntime="true" source="${source}" target="${target}">
             <src path="${src}"/>
             <src path="${src.test}"/>
         	<include name="**/*.java"/>
