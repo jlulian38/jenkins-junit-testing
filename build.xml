@@ -82,6 +82,7 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="${class.dir}" includeantruntime="false" source="${source}" target="${target}">
             <src path="${src}"/>
             <src path="${src.test}"/>
+        	<include name="**/*.java"/>
         	<classpath>
         		<path refid="compile.path"/>
         	</classpath>
